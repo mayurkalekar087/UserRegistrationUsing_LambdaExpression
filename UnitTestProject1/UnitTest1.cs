@@ -13,14 +13,14 @@ namespace UnitTestProject1
         public void GivenFirstName_WhenCheck_ShouldReturnTrue()
         {
             RegexPatterns name = new RegexPatterns();
-            bool result = name.ValidateName("Soham", RegexPatterns.FIRSTNAME_REGEX);
+            bool result = name.ValidateName("Mayur", RegexPatterns.FIRSTNAME_REGEX);
             Assert.IsTrue(result);
         }
         [TestMethod]
         public void GivenLastName_WhenCheck_ShouldReturnTrue()
         {
             RegexPatterns lastname = new RegexPatterns();
-            bool resultlastname = lastname.ValidateLastName("Dhamnaskar", RegexPatterns.LASTNAME_REGEX);
+            bool resultlastname = lastname.ValidateLastName("Kalekar", RegexPatterns.LASTNAME_REGEX);
             Assert.IsTrue(resultlastname);
         }
         [TestMethod]
@@ -34,7 +34,7 @@ namespace UnitTestProject1
         public void GivenEmailId_WhenCheck_ShouldReturnTrue()
         {
             RegexPatterns emailid = new RegexPatterns();
-            bool resultemailid = emailid.ValidateEmail("sohamdham123@gmail.com", RegexPatterns.EMAIL_REGEX);
+            bool resultemailid = emailid.ValidateEmail("mayurkalekar1232gmail.com", RegexPatterns.EMAIL_REGEX);
             Assert.IsTrue(resultemailid);
         }
         [TestMethod]
