@@ -1,7 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 
 namespace RegexTest
 {
@@ -27,7 +25,8 @@ namespace RegexTest
                         {
                             Console.WriteLine("Enter your First Name:");
                             RegexPatterns name = new RegexPatterns();
-                            bool result = name.ValidateName(Console.ReadLine());
+                            bool result = name.ValidateName(Console.ReadLine(), RegexPatterns.FIRSTNAME_REGEX);
+                            Console.WriteLine(result);
                             if (result == false)
                             {
                                 throw new RegexProgram("Must contain characters only. Having first letter capital with minimum 3 characters.\n====================");
@@ -44,7 +43,7 @@ namespace RegexTest
                         {
                             Console.WriteLine("Enter your Last Name:");
                             RegexPatterns lastname = new RegexPatterns();
-                            bool resultlastname = lastname.ValidateLastName(Console.ReadLine());
+                            bool resultlastname = lastname.ValidateLastName(Console.ReadLine(), RegexPatterns.LASTNAME_REGEX);
                             Console.WriteLine(resultlastname);
                             if (resultlastname == false)
                             {
@@ -63,7 +62,7 @@ namespace RegexTest
                         {
                             Console.WriteLine("Enter your Phone Number:");
                             RegexPatterns phonenum = new RegexPatterns();
-                            bool resultphonenum = phonenum.ValidatePhoneNum(Console.ReadLine());
+                            bool resultphonenum = phonenum.ValidatePhoneNum(Console.ReadLine(), RegexPatterns.PHONENUM_REGEX);
                             Console.WriteLine(resultphonenum);
                             if (resultphonenum == false)
                             {
@@ -82,7 +81,7 @@ namespace RegexTest
                         {
                             Console.WriteLine("Enter your Email Id:");
                             RegexPatterns emailid = new RegexPatterns();
-                            bool resultemailid = emailid.ValidateEmail(Console.ReadLine());
+                            bool resultemailid = emailid.ValidateEmail(Console.ReadLine(), RegexPatterns.EMAIL_REGEX);
                             Console.WriteLine(resultemailid);
                             if (resultemailid == false)
                             {
@@ -100,7 +99,7 @@ namespace RegexTest
                         {
                             Console.WriteLine("Enter your Password:");
                             RegexPatterns pass = new RegexPatterns();
-                            bool resultpass = pass.ValidatePassword(Console.ReadLine());
+                            bool resultpass = pass.ValidatePassword(Console.ReadLine(), RegexPatterns.PASSWORD_REGEX);
                             Console.WriteLine(resultpass);
                             if (resultpass == false)
                             {
