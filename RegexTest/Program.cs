@@ -1,24 +1,22 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
 namespace RegexTest
 {
-    class MyException : Exception
+    class RegexProgram : Exception
     {
-        public MyException
-            (String message) : base(message)
+        public RegexProgram(String message) : base(message)
         {
 
         }
         public static void Main(string[] args)
         {
-            Console.WriteLine("Welcome To User Registration Using Lambda Expression !");
             Console.WriteLine("Choose what to Enter:");
             Console.WriteLine("-------------------------");
-            Console.WriteLine("1. First Name.\n2. Last Name.\n3. Phone Number.\n4. Email Id.\n5. Password.");
+            Console.WriteLine("1. First Name.\n2. Last Name.\n3. Phone Number.\n4. Email Id.\n5. Password.\n6. Properties(Reflections)");
             Console.WriteLine("-------------------------");
-
             try
             {
                 int input = Convert.ToInt32(Console.ReadLine());
@@ -32,10 +30,10 @@ namespace RegexTest
                             bool result = name.ValidateName(Console.ReadLine());
                             if (result == false)
                             {
-                                throw new MyException("Must contain characters only. Having first letter capital with minimum 3 characters.\n====================");
+                                throw new RegexProgram("Must contain characters only. Having first letter capital with minimum 3 characters.\n====================");
                             }
                         }
-                        catch (MyException e)
+                        catch (RegexProgram e)
                         {
                             Console.WriteLine("====================\nInvalid Input\n====================");
                             Console.WriteLine(e.Message);
@@ -50,10 +48,10 @@ namespace RegexTest
                             Console.WriteLine(resultlastname);
                             if (resultlastname == false)
                             {
-                                throw new MyException("Must contain characters only. Having first letter capital with minimum 3 characters.\n====================");
+                                throw new RegexProgram("Must contain characters only. Having first letter capital with minimum 3 characters.\n====================");
                             }
                         }
-                        catch (MyException e)
+                        catch (RegexProgram e)
                         {
                             Console.WriteLine("====================\nInvalid Input\n====================");
                             Console.WriteLine(e.Message);
@@ -69,10 +67,10 @@ namespace RegexTest
                             Console.WriteLine(resultphonenum);
                             if (resultphonenum == false)
                             {
-                                throw new MyException("Must contain integers only. Starting with '91' and space and having exact 10 digits as Phone Number.\n====================");
+                                throw new RegexProgram("Must contain integers only. Starting with '91' and space and having exact 10 digits as Phone Number.\n====================");
                             }
                         }
-                        catch (MyException e)
+                        catch (RegexProgram e)
                         {
                             Console.WriteLine("====================\nInvalid Input\n====================");
                             Console.WriteLine(e.Message);
@@ -88,10 +86,10 @@ namespace RegexTest
                             Console.WriteLine(resultemailid);
                             if (resultemailid == false)
                             {
-                                throw new MyException("Must contain Alphabet and Numeric Combination only.\nEnding with proper domain address e.g. '@gmail.com'\n====================");
+                                throw new RegexProgram("Must contain Alphabet and Numeric Combination only.\nEnding with proper domain address e.g. '@gmail.com'\n====================");
                             }
                         }
-                        catch (MyException e)
+                        catch (RegexProgram e)
                         {
                             Console.WriteLine("====================\nInvalid Input\n====================");
                             Console.WriteLine(e.Message);
@@ -106,25 +104,26 @@ namespace RegexTest
                             Console.WriteLine(resultpass);
                             if (resultpass == false)
                             {
-                                throw new MyException("Must contain Alphanumeric combination.\nConsisting atleast 1 uppercase character, atleast 1 numeric value.\nAnd exactly one special character.\n====================");
+                                throw new RegexProgram("Must contain Alphanumeric combination.\nConsisting atleast 1 uppercase character, atleast 1 numeric value.\nAnd exactly one special character.\n====================");
                             }
                         }
-                        catch (MyException e)
+                        catch (RegexProgram e)
                         {
                             Console.WriteLine("====================\nInvalid Input\n====================");
                             Console.WriteLine(e.Message);
                         }
                         break;
-                    default:
-                        Console.WriteLine("!! Invalid Input !!");
+                    case 6:
+                        ReflectionOnUserRegistration.ReflectionTest();
                         break;
+
+
                 }
             }
             catch (Exception e)
             {
                 Console.WriteLine(e.Message);
             }
-
             Console.ReadKey();
         }
 
